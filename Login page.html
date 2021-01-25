@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>登入頁面</title>
+    <link rel=stylesheet type="text/css" href="color.css">
+    <script type="text/javascript">
+        function sendok() {
+            if (userid.value != "" && userpwd.value != "") {
+                localStorage.userid = userid.value;
+                sessionStorage.userpwd = userpwd.value;
+                return true;
+            } else {
+                alert("請輸入帳號");
+                return false;
+            }
+        }
+
+        function isload() {
+            if (localStorage.userid)
+                userid.value = localStorage.userid;
+        }
+    </script>
+</head>
+
+<body onload="isload()">
+    <font face="標楷體">
+        <h1>
+            <img src="001.png" width="60" /> 東吳課程網
+        </h1>
+    </font>
+    <form method="post" action="Course page.html" onsubmit="return sendok();">
+        請輸入您的帳號：<br />
+        <input type="text" id="userid" value="" autofocus><br /> 請輸入您的密碼：
+        <br />
+        <input type="password" id="userpwd" value=""><br />
+        <font style="font-size:12px">
+            (測試帳號：SCU 密碼:Soochow)</font><br />
+        <input id="btn_send" type="submit" value="送出"><br />
+    </form>
+</body>
+</body>
+
+</html>
